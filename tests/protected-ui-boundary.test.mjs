@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const restoreHostingPaths=s=>String(s).replace("ort.env.wasm.wasmPaths=new URL('./vendor/',import.meta.url).href","ort.env.wasm.wasmPaths='/vendor/'").replace(/(["'])\.\/(assets\/|vendor\/|visual-model\/)/g,'$1/$2');
+const sha=s=>createHash('sha256').update(s).digest('hex');
+const files={"capture.js": "69606e3878ff9a9dd18f6f647e42f41afd0eb8f55ed3b28fdef1e688b4c0c76a", "visual.js": "9e5c23c9b22a3fdd2cc27a596b41563463d9313b33f74fb1f7f5c1316f7c9642", "assessment.js": "a941037cc388be42215d31f6339bbaae5f4e60a686efad4175b66072db47cec5", "data.js": "56c0d8f353a26bc95048ba1413673a56a5410a5db538b71bfa091f1f9a0120d3", "multiview.js": "ac7d31aef6a809c76ac04b0f0b6307f2d3190ef00c98ef93d56e1201c94e04c0", "catalog.json": "685e606934802c9f79eb9d6560d49ea2165b8dfa6b26e0cc01aa8a3496e17880"};
+const sections={"quiz": "7693c99db8be46bc62f77c3251e92e5f6173ab2b2aa6c9785445c6a5391246ac", "hairRoutine": "ac88307716c222eae559db6d0d94bf819528f3fcc8b5b48d8e37f49b2159f923", "hairResults": "a804448b15b4c028ba62533a40cd35cafb1af55449e31d5644c637b00e704a81", "lookDetail": "da93aeb9b3255bc07dcdc0996a882883261d63032c87f8e4c62264b2710766fb"};
+test('UI redesign preserves the existing scanner, questions, models and recommendation rules',()=>{for(const [file,hash] of Object.entries(files))assert.equal(sha(restoreHostingPaths(fs.readFileSync(new URL('../site/'+file,import.meta.url)))),hash,file+' changed')});
+test('quiz, results and original tutorial functions remain unchanged',()=>{const s=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');for(const [name,next] of [['quiz','rankMarkup'],['hairRoutine','hairResults'],['hairResults','stopCamera'],['lookDetail','about']]){const a=s.indexOf('function '+name+'('),b=s.indexOf('function '+next+'(',a);const section=s.slice(a,b);const preserved=name==='hairResults'?section.replace('${hairRoutineLink(a.rank[0]?.label)}',''):section;assert.equal(sha(preserved),sections[name],name+' changed beyond the authorized result link')}});

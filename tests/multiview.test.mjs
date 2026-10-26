@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {combineViews} from '../site/multiview.js';
+import {assessHair} from '../site/assessment.js';
+const scores=idx=>Array.from({length:12},(_,i)=>i===idx?.67:.03);
+const view=(id,idx)=>({id,result:{scores:scores(idx),unsuitable:false}});
+test('repeated agreeing evidence is averaged, not sharpened',()=>{const v=combineViews([view('front',4),view('side',4),view('texture',4)]);assert.equal(v.familyAgreement,100);assert.equal(v.viewCount,3);assert(Math.abs(v.scores[4]-.67)<1e-10);assert(Math.abs(v.scores.reduce((s,n)=>s+n,0)-1)<1e-10)});
+test('inconsistent views remain tentative; ends never vote for pattern',()=>{const v=combineViews([view('front',4),view('side',10),view('texture',10),view('ends',0)]);assert.equal(v.viewCount,3);assert.equal(v.familyAgreement,67);assert(v.viewConflict);const a=assessHair({pattern:'coils',curlSize:'zigzag'},v);assert(a.tentative);assert.equal(a.photoWeight,.4)});
+test('unusable images do not invent a pattern or damage',()=>{const v=combineViews([{id:'front',error:'load failed'},{id:'side',result:{scores:scores(0),unsuitable:true}}]);const a=assessHair({},v);assert.equal(a.rank.length,0);assert.equal(a.damage,null)});
+test('inconclusive ends leave care history in control',()=>{const v=combineViews([view('front',4),view('side',4),view('texture',4)]);const a=assessHair({pattern:'waves',curlSize:'large',bleach:'multiple',chemical:'dye',heat:'daily',ends:'many',breakage:'frequent',feel:'rough'},v);assert(a.damage.score>40);assert.equal(a.damage.visual,null);assert.equal(a.damage.score,a.damage.history);assert.equal(a.photoWeight,.6)});

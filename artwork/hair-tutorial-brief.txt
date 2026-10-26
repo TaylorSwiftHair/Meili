@@ -1,0 +1,1354 @@
+# MeiLi — FIX THE ACTUAL HAIR ROUTINE TUTORIAL PAGES
+
+## IMPORTANT: THE CAROUSEL IS ALREADY UPDATED
+
+The **Hair Routine Catalog carousel itself has already been updated successfully.**
+
+Do NOT spend this task rebuilding or redesigning the carousel.
+
+The current problem happens **AFTER the user clicks a Hair Routine Catalog image or circle and enters the actual tutorial page.**
+
+Right now, the tutorial pages are still using:
+
+- Old placeholder tutorial images
+- Old routine steps
+- Old descriptions/content
+
+That is what must be fixed in this update.
+
+# THE MAIN TASK IS TO UPDATE THE ACTUAL HAIR ROUTINE TUTORIALS.
+
+When a user clicks one of the four Hair Routine Catalog selections, the page they enter must now use:
+
+1. The NEW written routine steps provided below.
+2. The NEW uploaded hand-drawn tutorial artwork.
+3. The correct routine for that selected hair type.
+4. The existing MeiLi tutorial layout.
+
+Do not stop after updating the Hair Routine Catalog carousel.
+
+The changes MUST continue into the actual tutorial pages.
+
+---
+
+# 1. THERE ARE ONLY FOUR HAIR ROUTINES
+
+There are exactly four Hair Routine tutorials:
+
+### Type 1 — Straight Hair
+Includes:
+
+- 1A
+- 1B
+- 1C
+
+### Type 2 — Wavy Hair
+Includes:
+
+- 2A
+- 2B
+- 2C
+
+### Type 3 — Curly Hair
+
+### Type 4 — Coily Hair
+
+Do not create separate tutorials for individual subtypes.
+
+There should be:
+
+**4 catalog selections → 4 tutorial routines**
+
+not 12.
+
+---
+
+# 2. CORRECT ROUTING FROM THE HAIR ROUTINE CATALOG
+
+The Hair Routine Catalog carousel is already updated.
+
+Now make sure clicking its selected image or circle opens the correct updated tutorial.
+
+The mapping must be:
+
+### Type 1 — Straight Hair
+Click the Type 1 image OR circle  
+→ open the updated Straight Hair tutorial
+
+### Type 2 — Wavy Hair
+Click the Type 2 image OR circle  
+→ open the updated Wavy Hair tutorial
+
+### Type 3 — Curly Hair
+Click the Type 3 image OR circle  
+→ open the updated Curly Hair tutorial
+
+### Type 4 — Coily Hair
+Click the Type 4 image OR circle  
+→ open the updated Coily Hair tutorial
+
+The tutorial route must load the NEW step data and NEW tutorial images described below.
+
+Do not route to the old placeholder tutorial data.
+
+---
+
+# 3. REPLACE THE OLD TUTORIAL DATA
+
+This is one of the most important corrections.
+
+The Hair Routine tutorial pages currently still contain the previous/placeholder step information.
+
+Replace that data.
+
+Do NOT merely add the new data somewhere else while leaving the old tutorial connected.
+
+The route that actually opens from the Hair Routine Catalog must use the NEW routine data below.
+
+If there is an existing array/object such as:
+
+`steps`
+
+`hairRoutineSteps`
+
+`tutorialSteps`
+
+or similar,
+
+update the data that the active tutorial page actually reads from.
+
+Do not create an unused duplicate object.
+
+---
+
+# 4. REPLACE THE OLD PLACEHOLDER TUTORIAL IMAGES
+
+This is also a critical correction.
+
+Once the user opens the actual Hair Routine tutorial, the tutorial currently still shows placeholder images.
+
+# REPLACE THOSE PLACEHOLDER IMAGES.
+
+I uploaded a new ZIP containing the hand-drawn Hair Routine artwork.
+
+The ZIP contains four image sheets:
+
+- `1.png`
+- `2.png`
+- `3.png`
+- `4.png`
+
+These are the NEW source images for the Hair Routine tutorials.
+
+Use the actual uploaded artwork.
+
+Do NOT keep the existing placeholder tutorial images.
+
+Do NOT update only the Hair Routine Catalog thumbnails.
+
+The images **inside the step-by-step tutorial itself** must be replaced.
+
+---
+
+# 5. USE THE FOUR UPLOADED DRAWING SHEETS AS THE TUTORIAL SOURCE
+
+The uploaded artwork corresponds to the four broad routines:
+
+- Type 1 — Straight Hair
+- Type 2 — Wavy Hair
+- Type 3 — Curly Hair
+- Type 4 — Coily Hair
+
+Inspect the uploaded sheets and identify the individual drawings for:
+
+- Shampoo
+- Conditioner
+- Toweling
+- Leave-in
+- Styling
+- Sectioning
+- Diffusing
+- Finishing
+- etc.
+
+Use those drawings in the actual tutorial steps.
+
+Do not use stock images.
+
+Do not generate new hair illustrations.
+
+Do not keep old placeholder artwork.
+
+---
+
+# 6. EXTRACT EACH STEP DRAWING INTO ITS OWN CLEAN ASSET
+
+The uploaded files contain multiple illustrations on a larger sheet.
+
+Do not show the entire sheet during every tutorial step.
+
+Instead:
+
+1. Preserve the original uploaded sheet.
+2. Extract/crop the corresponding individual illustration for each tutorial step.
+3. Create a clean derived asset.
+4. Use that clean derived image in the actual tutorial page.
+
+For example:
+
+`straight-shampoo.png`
+
+`straight-conditioner.png`
+
+`straight-towel.png`
+
+`wavy-leave-in.png`
+
+`curly-section.png`
+
+`coily-twists.png`
+
+The exact filenames can follow the existing project structure.
+
+---
+
+# 7. DO NOT CROP ANY PART OF THE ACTUAL DRAWING
+
+This is a hard rule.
+
+When extracting the individual tutorial artwork:
+
+# DO NOT CUT OFF ANY PART OF THE GIRL, HAIR, HEAD, BODY, OR MEANINGFUL DRAWING.
+
+Do not crop off:
+
+- Top of the head
+- Hair
+- Forehead
+- Face
+- Chin
+- Neck
+- Shoulders
+- Clothing
+- Arms/hands if included
+- Comb
+- Brush
+- Diffuser
+- Towel
+- Styling tools
+- Hair products
+- Direction arrows
+- Any meaningful illustration detail
+
+Only remove:
+
+- White background
+- Source-sheet labels
+- Development text
+- Unnecessary empty space
+
+If the image does not fit the tutorial frame:
+
+**scale it down proportionally.**
+
+If necessary:
+
+**add transparent padding.**
+
+Do NOT solve the problem by cutting off the drawing.
+
+---
+
+# 8. REMOVE THE WHITE BACKGROUND
+
+The tutorial artwork should not appear inside a white rectangular box.
+
+Remove the white background from the extracted step drawings.
+
+The final step images should have:
+
+# TRANSPARENT BACKGROUNDS.
+
+Use transparent PNGs or equivalent.
+
+The illustration should sit naturally over the existing MeiLi tutorial background.
+
+---
+
+# 9. REMOVE TEXT FROM THE SOURCE ARTWORK
+
+If the uploaded sheets contain labels such as:
+
+- Shampoo
+- Conditioner
+- Diffuse
+- Section hair
+- Leave-in
+- Any handwritten or typed development label
+
+remove those labels from the final tutorial artwork.
+
+The final image area should show:
+
+**the clean illustration only.**
+
+The app itself already has:
+
+- Step title
+- Step number
+- Description box
+
+Do not duplicate source-sheet labels on the artwork.
+
+---
+
+# 10. KEEP THE TUTORIAL IMAGES HIGH QUALITY
+
+The actual tutorial drawings should be:
+
+- High resolution
+- Sharp
+- Clear
+- Not blurry
+- Not pixelated
+
+Do not use a tiny low-resolution crop and stretch it.
+
+Use the highest-resolution uploaded source available.
+
+Export the derived step images at a size appropriate for both:
+
+- Mobile
+- Desktop
+
+Desktop images should still look clear when displayed larger.
+
+---
+
+# 11. KEEP THE GIRL / DRAWING CENTERED
+
+Across the tutorial steps, the character/drawing should remain visually centered.
+
+Do not let the character jump noticeably:
+
+- Left
+- Right
+- Up
+- Down
+
+when moving between steps.
+
+Use consistent:
+
+- Canvas dimensions
+- Transparent padding
+- Alignment
+- Scaling
+
+where appropriate.
+
+The experience should feel like the same tutorial character remains stable while the hair-care action changes.
+
+---
+
+# 12. DO NOT ALTER THE ORIGINAL ARTWORK
+
+Do not:
+
+- AI regenerate the drawings
+- Redraw the characters
+- Change their faces
+- Change hair colors
+- Change hair textures
+- Change the artistic style
+- Add random elements
+- Replace them with stock artwork
+
+Use the uploaded drawings.
+
+Only clean and prepare them for the tutorial.
+
+---
+
+# 13. THE TEXT AND DRAWING MUST CHANGE TOGETHER
+
+Inside every Hair Routine tutorial, there are two arrow controls:
+
+**← Previous**
+
+and
+
+**Next →**
+
+When the user presses Next:
+
+the following must ALL advance together:
+
+- Step number
+- Step title
+- Step description
+- Step drawing
+
+When the user presses Previous:
+
+all four must move back together.
+
+Do not let the description change while the drawing stays the same.
+
+Do not let the drawing change while the old description remains.
+
+Use one shared state such as:
+
+`currentStep`
+
+to control the entire tutorial step.
+
+---
+
+# 14. TYPE 1 — STRAIGHT HAIR ROUTINE
+
+This one routine covers:
+
+- 1A
+- 1B
+- 1C
+
+Use the new Type 1 / Straight Hair artwork.
+
+## Step 1 — Shampoo
+
+Display:
+
+**Shampoo**
+
+Description:
+
+Wash depending on how oily your scalp gets.
+
+Use the corresponding Straight Hair shampoo drawing.
+
+---
+
+## Step 2 — Conditioner
+
+Display:
+
+**Conditioner**
+
+Description:
+
+Apply lightweight conditioner mainly to the mid-lengths and ends.
+
+Use a hair mask occasionally if your ends feel dry.
+
+These belong to ONE step.
+
+Do not make Hair Mask a separate step.
+
+Use the corresponding Straight Hair conditioner drawing.
+
+---
+
+## Step 3 — Remove Excess Water
+
+Display:
+
+**Remove Excess Water**
+
+Description:
+
+Gently squeeze excess water out with a microfiber towel or cotton T-shirt.
+
+Use the corresponding towel drawing.
+
+---
+
+## Step 4 — Detangle
+
+Display:
+
+**Detangle**
+
+Description:
+
+Detangle with a wide-tooth comb or gentle brush.
+
+Use the corresponding detangling drawing.
+
+---
+
+## Step 5 — Leave-In / Heat Protectant
+
+Display:
+
+**Leave-In / Heat Protectant**
+
+Description:
+
+Apply a lightweight leave-in conditioner or heat protectant if needed.
+
+Use the corresponding drawing from the uploaded Type 1 artwork.
+
+---
+
+## Step 6 — Dry
+
+Display:
+
+**Dry**
+
+Description:
+
+Air-dry or blow-dry on low heat.
+
+Use the corresponding drying drawing.
+
+---
+
+## Step 7 — Finish
+
+Display:
+
+**Finish**
+
+Description:
+
+If your ends are dry, apply a small amount of lightweight hair oil to the ends.
+
+Use the closest corresponding finishing drawing supplied in the Type 1 sheet.
+
+---
+
+# 15. TYPE 2 — WAVY HAIR ROUTINE
+
+This one routine covers:
+
+- 2A
+- 2B
+- 2C
+
+Use the new Type 2 / Wavy Hair artwork.
+
+## Step 1 — Shampoo
+
+Display:
+
+**Shampoo**
+
+Description:
+
+Wash.
+
+Use a gentle shampoo to cleanse without leaving your hair feeling stripped.
+
+Use clarifying shampoo occasionally when product buildup occurs.
+
+This is ONE Shampoo step.
+
+Do not split this into multiple steps.
+
+Use the Wavy Hair shampoo drawing.
+
+---
+
+## Step 2 — Conditioner
+
+Display:
+
+**Conditioner**
+
+Description:
+
+Apply a lightweight conditioner to the mid-lengths and ends.
+
+Detangle gently while the conditioner is in your hair.
+
+Use a more moisturizing conditioner if your hair is thick, coarse, or prone to dryness.
+
+These instructions remain inside ONE Conditioner step.
+
+Use the corresponding Wavy Hair conditioner drawing.
+
+---
+
+## Step 3 — Leave-In Conditioner
+
+Display:
+
+**Leave-In Conditioner**
+
+Description:
+
+Apply a lightweight leave-in conditioner if needed.
+
+Use the corresponding Wavy Hair leave-in drawing.
+
+---
+
+## Step 4 — Mousse / Lightweight Gel
+
+Display:
+
+**Mousse / Lightweight Gel**
+
+Description:
+
+Scrunch in mousse or lightweight gel to enhance wave definition and reduce frizz.
+
+Apply products in sections to distribute them evenly.
+
+### IMPORTANT
+
+“Apply products in sections to distribute them evenly” is NOT a new step.
+
+It belongs inside this same step.
+
+Use the corresponding Wavy Hair styling/scrunching drawing.
+
+---
+
+## Step 5 — Remove Excess Water
+
+Display:
+
+**Remove Excess Water**
+
+Description:
+
+Gently scrunch out excess water with a microfiber towel or cotton T-shirt.
+
+Use the corresponding towel/microplop drawing.
+
+---
+
+## Step 6 — Dry
+
+Display:
+
+**Dry**
+
+Description:
+
+Air-dry or diffuse on low heat.
+
+Use the corresponding Wavy Hair drying/diffusing drawing.
+
+---
+
+## Step 7 — Scrunch Out the Cast
+
+Display:
+
+**Scrunch Out the Cast**
+
+Description:
+
+Once completely dry, gently scrunch out any stiffness from the gel.
+
+Use the closest clearly matching drawing supplied in the Wavy Hair artwork.
+
+---
+
+# 16. TYPE 3 — CURLY HAIR ROUTINE
+
+Use the Type 3 / Curly Hair artwork.
+
+## Step 1 — Shampoo
+
+Display:
+
+**Shampoo**
+
+Description:
+
+Wash with shampoo.
+
+Use a gentle, moisturizing shampoo.
+
+### IMPORTANT
+
+“Use a gentle, moisturizing shampoo” is NOT another step.
+
+Keep both instructions inside Shampoo.
+
+Use the Curly Hair shampoo drawing.
+
+---
+
+## Step 2 — Conditioner
+
+Display:
+
+**Conditioner**
+
+Description:
+
+Apply a moisturizing conditioner after shampooing.
+
+Detangle gently with your fingers or a wide-tooth comb while the conditioner is in your hair.
+
+Use the corresponding Curly Hair conditioner drawing.
+
+---
+
+## Step 3 — Leave-In Conditioner
+
+Display:
+
+**Leave-In Conditioner**
+
+Description:
+
+Apply a leave-in conditioner to damp hair.
+
+Use the corresponding Curly Hair leave-in drawing.
+
+---
+
+## Step 4 — Curl Cream + Gel
+
+Display:
+
+**Curl Cream + Gel**
+
+Description:
+
+Apply curl cream for moisture and definition, followed by curl-defining gel for hold.
+
+Use the corresponding Curly Hair product drawing.
+
+---
+
+## Step 5 — Section Hair
+
+Display:
+
+**Section Hair**
+
+Description:
+
+Divide hair into sections to distribute products evenly.
+
+Use the corresponding Curly Hair sectioning drawing.
+
+---
+
+## Step 6 — Define Curls
+
+Display:
+
+**Define Curls**
+
+Description:
+
+Use a styling brush or your fingers to define curls section by section.
+
+Use the corresponding Curly Hair styling drawing.
+
+---
+
+## Step 7 — Scrunch
+
+Display:
+
+**Scrunch**
+
+Description:
+
+Scrunch upward to encourage curl formation.
+
+Use the corresponding Curly Hair scrunching drawing.
+
+---
+
+## Step 8 — Dry
+
+Display:
+
+**Dry**
+
+Description:
+
+Air-dry or diffuse on low heat.
+
+Use the corresponding Curly Hair diffusing/drying drawing.
+
+---
+
+## Step 9 — Finish
+
+Display:
+
+**Finish**
+
+Description:
+
+Once completely dry, gently scrunch out any stiffness.
+
+Add a small amount of hair oil to the ends if needed.
+
+These instructions belong to the same final step.
+
+Do not create a separate oil step.
+
+Use the appropriate finishing drawing.
+
+---
+
+# 17. TYPE 4 — COILY HAIR ROUTINE
+
+Use the Type 4 / Coily Hair artwork.
+
+## Step 1 — Shampoo
+
+Display:
+
+**Shampoo**
+
+Description:
+
+Wash.
+
+Use a gentle, moisturizing shampoo to cleanse the scalp while maintaining moisture.
+
+Clarify occasionally when buildup occurs, especially if you use heavy creams, oils, or butters.
+
+All of this remains ONE Shampoo step.
+
+Use the Coily Hair shampoo/wash drawing.
+
+---
+
+## Step 2 — Conditioner
+
+Display:
+
+**Conditioner**
+
+Description:
+
+Apply a rich, moisturizing conditioner after shampooing.
+
+Detangle gently in small sections, working from the ends toward the roots.
+
+Rinse thoroughly and avoid forcing a comb through knots.
+
+These remain ONE Conditioner step.
+
+Use the corresponding Coily Hair conditioner drawing.
+
+---
+
+## Step 3 — Leave-In Conditioner
+
+Display:
+
+**Leave-In Conditioner**
+
+Description:
+
+Apply a moisturizing leave-in conditioner to damp hair.
+
+Use the corresponding Coily Hair leave-in drawing.
+
+---
+
+## Step 4 — Cream / Butter + Gel / Custard
+
+Display:
+
+**Cream / Butter + Gel / Custard**
+
+Description:
+
+Apply a styling cream or butter for moisture, followed by a defining gel or custard if desired.
+
+Use the corresponding Coily Hair styling-product drawing.
+
+---
+
+## Step 5 — Section Hair
+
+Display:
+
+**Section Hair**
+
+Description:
+
+Divide hair into approximately 4–8 sections, depending on density and length.
+
+Use the corresponding Coily Hair sectioning drawing.
+
+---
+
+## Step 6 — Define Each Section
+
+Display:
+
+**Define Each Section**
+
+Description:
+
+Work through each section individually, using your fingers or a suitable styling brush to distribute products and define coils.
+
+Use the corresponding Coily Hair definition/styling drawing.
+
+---
+
+## Step 7 — Stretch the Hair
+
+Display:
+
+**Stretch the Hair**
+
+Description:
+
+For a stretched style, try twists, braids, or banding.
+
+Use the uploaded twists/braids/banding drawing.
+
+---
+
+## Step 8 — Dry
+
+Display:
+
+**Dry**
+
+Description:
+
+Air-dry or use a diffuser on low heat.
+
+Use the corresponding Coily Hair drying/diffusing drawing.
+
+---
+
+## Step 9 — Finish
+
+Display:
+
+**Finish**
+
+Description:
+
+Once dry, gently separate or fluff the hair as desired.
+
+Apply a small amount of oil to the ends if needed.
+
+These belong to the same final step.
+
+Do not create a separate oil step.
+
+Use the closest clearly matching finishing drawing.
+
+---
+
+# 18. DO NOT CREATE EXTRA STEPS FROM SUB-BULLETS
+
+This is extremely important.
+
+Some steps contain several instructions.
+
+Those instructions do NOT automatically become separate pages.
+
+Follow the step headings above exactly.
+
+Examples:
+
+### Type 2 Shampoo
+
+These all belong together:
+
+- Wash
+- Gentle shampoo
+- Clarifying shampoo occasionally
+
+ONE step.
+
+### Type 2 Styling
+
+“Apply products in sections to distribute them evenly”
+
+is NOT a separate step.
+
+### Type 3 Shampoo
+
+“Use a gentle, moisturizing shampoo”
+
+is NOT a separate step.
+
+### Type 4 Conditioner
+
+Detangling and rinsing instructions are part of Conditioner.
+
+Do not create extra tutorial screens.
+
+---
+
+# 19. IF AN IMAGE DOES NOT HAVE A PERFECT TEXT MATCH
+
+The written routine above is the source of truth for the tutorial steps.
+
+The uploaded drawings are the visual source.
+
+If a written step has no perfect drawing:
+
+Do NOT:
+
+- Remove the written step
+- Make up a different routine
+- Generate an AI image
+- Use an unrelated illustration
+
+Instead:
+
+- Use the closest clearly corresponding uploaded drawing if appropriate.
+- Otherwise report that the step does not have a clear matching illustration.
+
+If an uploaded drawing does not correspond to one of the written steps:
+
+leave it unused.
+
+Do not create extra tutorial steps just to use every drawing.
+
+---
+
+# 20. ACTUALLY REPLACE THE PLACEHOLDER IMAGES INSIDE THE ROUTINE
+
+This is the most important correction from the last attempt.
+
+Before calling this task complete, enter all four tutorials manually and visually check them.
+
+### Type 1 tutorial
+
+There must be NO old placeholder tutorial images.
+
+It must use the new uploaded Straight Hair artwork.
+
+### Type 2 tutorial
+
+There must be NO old placeholder tutorial images.
+
+It must use the new uploaded Wavy Hair artwork.
+
+### Type 3 tutorial
+
+There must be NO old placeholder tutorial images.
+
+It must use the new uploaded Curly Hair artwork.
+
+### Type 4 tutorial
+
+There must be NO old placeholder tutorial images.
+
+It must use the new uploaded Coily Hair artwork.
+
+Updating the Hair Routine Catalog images is NOT enough.
+
+The images inside the actual step-by-step routines must change too.
+
+---
+
+# 21. ACTUALLY REPLACE THE OLD TEXT INSIDE THE ROUTINE
+
+Likewise, open all four tutorials and verify that the descriptions are the NEW descriptions above.
+
+There should be no leftover placeholder step text.
+
+There should be no old 1A/1B/1C-specific routine page text.
+
+There should be no old subtype-based routines.
+
+The live tutorials must use only the four broad routine datasets described in this prompt.
+
+---
+
+# 22. USE A DATA-DRIVEN IMPLEMENTATION
+
+Prefer one reusable Hair Tutorial component.
+
+Conceptually:
+
+```text
+hairRoutines = {
+  straight: {
+    label: "Type 1 — Straight Hair",
+    steps: [
+      { title, description, image },
+      ...
+    ]
+  },
+
+  wavy: {
+    label: "Type 2 — Wavy Hair",
+    steps: [...]
+  },
+
+  curly: {
+    label: "Type 3 — Curly Hair",
+    steps: [...]
+  },
+
+  coily: {
+    label: "Type 4 — Coily Hair",
+    steps: [...]
+  }
+}
+```
+
+The Hair Routine Catalog should pass the selected routine ID into this tutorial data.
+
+Do not leave the existing tutorial component connected to old placeholder arrays.
+
+---
+
+# 23. HAIR SCANNER SUBTYPE MAPPING
+
+Do not alter the Hair Scanner.
+
+But if the existing scanner produces a subtype result:
+
+- 1A / 1B / 1C → Straight Hair routine
+- 2A / 2B / 2C → Wavy Hair routine
+- Any Type 3 subtype → Curly Hair routine
+- Any Type 4 subtype → Coily Hair routine
+
+This changes only which broad routine is selected.
+
+# DO NOT CHANGE HOW THE AI SCANNER DETERMINES HAIR TYPE.
+
+---
+
+# 24. PRESERVE THE EXISTING MEILI TUTORIAL DESIGN
+
+Do not redesign the routine page.
+
+Keep:
+
+- Existing pink Y2K styling
+- Argyle background
+- White lace
+- Instruction box
+- Image/bubble area
+- Existing heading/body fonts
+- Home button
+- Previous/Next buttons
+- Existing responsive behavior
+
+Only replace:
+
+- Tutorial data
+- Tutorial step images
+
+and make any minimum adjustments needed for the images to display correctly.
+
+---
+
+# 25. DO NOT CHANGE ANYTHING ELSE
+
+# DO NOT CHANGE THE AI HAIR SCANNER.
+
+Do not modify:
+
+- Model
+- Camera
+- Scan process
+- Number of photos
+- Results
+- Analysis
+- Backend
+- API
+- User data
+
+# DO NOT CHANGE THE HAIR QUIZ.
+
+Do not modify:
+
+- Questions
+- Answers
+- Question order
+- Logic
+- Scoring
+- Results
+
+# DO NOT CHANGE THE MAKEUP QUIZ.
+
+Leave it completely unchanged.
+
+# DO NOT CHANGE THE MAKEUP STYLE CATALOG OR MAKEUP TUTORIALS.
+
+This correction is only for the actual Hair Routine tutorial pages.
+
+---
+
+# 26. REQUIRED MANUAL VERIFICATION
+
+Do NOT declare the task complete after only seeing that the app compiles.
+
+Actually test:
+
+## Type 1
+
+From Hair Routine Catalog:
+
+Click Type 1 image.
+
+Verify:
+
+- Straight Hair tutorial opens.
+- Step 1 is Shampoo.
+- New Shampoo description is present.
+- New Straight Hair drawing appears.
+
+Press Next repeatedly.
+
+Verify all 7 steps.
+
+Then return and click the Type 1 circle.
+
+Verify the same tutorial opens.
+
+---
+
+## Type 2
+
+Open Wavy Hair.
+
+Verify all 7 new steps and new Wavy Hair drawings.
+
+---
+
+## Type 3
+
+Open Curly Hair.
+
+Verify all 9 new steps and new Curly Hair drawings.
+
+---
+
+## Type 4
+
+Open Coily Hair.
+
+Verify all 9 new steps and new Coily Hair drawings.
+
+---
+
+# 27. FINAL IMAGE CHECKLIST
+
+For EVERY live Hair Routine step verify:
+
+- [ ] Old placeholder image is gone.
+- [ ] Correct uploaded drawing is shown.
+- [ ] Image corresponds to the current step.
+- [ ] Image is high resolution.
+- [ ] Image is not blurry.
+- [ ] White background is removed.
+- [ ] Background is transparent.
+- [ ] Development text is removed.
+- [ ] No part of the head is cropped.
+- [ ] No part of the hair is cropped.
+- [ ] No meaningful part of the drawing is cropped.
+- [ ] Image is not stretched.
+- [ ] Drawing remains centered.
+- [ ] Drawing does not jump significantly between steps.
+
+---
+
+# 28. FINAL TEXT CHECKLIST
+
+Verify:
+
+- [ ] Straight Hair uses exactly the new 7-step routine.
+- [ ] Wavy Hair uses exactly the new 7-step routine.
+- [ ] Curly Hair uses exactly the new 9-step routine.
+- [ ] Coily Hair uses exactly the new 9-step routine.
+- [ ] No old subtype-based steps remain.
+- [ ] No old placeholder instructions remain.
+- [ ] No sub-bullet was accidentally turned into its own step.
+- [ ] Step text and image move together.
+
+---
+
+# 29. FINAL ROUTING CHECKLIST
+
+Verify:
+
+- [ ] Type 1 image → new Straight Hair tutorial.
+- [ ] Type 1 circle → same new Straight Hair tutorial.
+- [ ] Type 2 image → new Wavy Hair tutorial.
+- [ ] Type 2 circle → same new Wavy Hair tutorial.
+- [ ] Type 3 image → new Curly Hair tutorial.
+- [ ] Type 3 circle → same new Curly Hair tutorial.
+- [ ] Type 4 image → new Coily Hair tutorial.
+- [ ] Type 4 circle → same new Coily Hair tutorial.
+
+---
+
+# 30. FINAL SAFETY CHECKLIST
+
+Verify:
+
+- [ ] AI Hair Scanner unchanged.
+- [ ] Hair Quiz unchanged.
+- [ ] Makeup Quiz unchanged.
+- [ ] Makeup Style Catalog unchanged.
+- [ ] Makeup tutorials unchanged.
+- [ ] Hair Routine Catalog carousel remains working.
+- [ ] Existing MeiLi fonts remain.
+- [ ] Existing MeiLi colors remain.
+- [ ] Existing lace remains.
+- [ ] Existing Home button remains.
+- [ ] No unrelated screens were redesigned.
+
+---
+
+# FINAL RULE — READ THIS CAREFULLY
+
+The previous attempt successfully updated the **Hair Routine Catalog carousel**, but did NOT correctly update the **actual tutorials after clicking into them**.
+
+This task is specifically to fix that.
+
+# DO NOT JUST UPDATE THE CAROUSEL AGAIN.
+
+Once I click:
+
+**Type 1, Type 2, Type 3, or Type 4**
+
+from the Hair Routine Catalog:
+
+the actual tutorial page that opens must now contain:
+
+- The NEW routine steps in this prompt.
+- The NEW uploaded hand-drawn tutorial artwork.
+- NO old placeholder tutorial images.
+- NO old placeholder routine text.
+
+And as I click Previous/Next:
+
+**the NEW drawing and NEW description must change together for every step.**
+
+Use the exact four uploaded Hair Routine drawing sheets as the source artwork.
+
+Keep every drawing:
+
+- Centered
+- High quality
+- High resolution
+- Sharp
+- Transparent
+- Free of white backgrounds
+- Free of text overlays
+- Fully visible
+- Not stretched
+- Not cropped
+
+Most importantly:
+
+# DO NOT CHANGE THE AI HAIR SCANNER.
+
+# DO NOT CHANGE THE HAIR QUIZ.
+
+# DO NOT CHANGE THE MAKEUP QUIZ.
+
+# DO NOT CHANGE UNRELATED PARTS OF MEILI.

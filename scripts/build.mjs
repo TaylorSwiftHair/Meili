@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {validate} from './validate-site.mjs';
+const source=fileURLToPath(new URL('../site/',import.meta.url));
+const output=fileURLToPath(new URL('../_site/',import.meta.url));
+const checks=await validate(source);
+await fs.rm(output,{recursive:true,force:true});
+await fs.cp(source,output,{recursive:true});
+for(const name of ['README.md','THIRD_PARTY.md'])await fs.copyFile(new URL('../'+name,import.meta.url),new URL('../_site/'+name,import.meta.url));
+console.log(`Built _site/: ${checks.files} public files, ${checks.labels} labels, ${checks.modelBytes} verified model bytes. All asset paths support repository subpaths.`);
